@@ -12,10 +12,14 @@
   <p>Loading products...</p>
 {:else if $query.isError}
   <p>Error loading products: {$query.error.message}</p>
-{:else if $query.data}
+{:else if $query.data }
   <ul>
     {#each $query.data.products as product (product.id)}
-      <li>{product.title} - ${product.price}</li>
+      <li>
+        <a href={`/product/${product.id}`}>
+          {product.title} - ${product.price}
+        </a>
+      </li>
     {/each}
   </ul>
 {:else}
