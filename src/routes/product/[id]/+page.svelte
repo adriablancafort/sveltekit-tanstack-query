@@ -11,6 +11,8 @@
   })
 </script>
 
+<a href="/">Home</a>
+
 {#if $query.isLoading}
   <p>Loading product...</p>
 {:else if $query.isError}
